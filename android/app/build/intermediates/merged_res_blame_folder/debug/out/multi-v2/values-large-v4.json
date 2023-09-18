@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.dareapp-mergeDebugResources-27:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.dareapp-mergeDebugResources-34:/values-large-v4/values-large-v4.xml",
             "map": [
+                {
+                    "source": "/Users/annenatchimie/.gradle/caches/transforms-3/3b154b3d0fec1a41e0cc514b1d732555/transformed/material-1.1.0/res/values-large-v4/values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,177",
+                        "endColumns": "121,133",
+                        "endOffsets": "172,306"
+                    },
+                    "to": {
+                        "startLines": "11,12",
+                        "startColumns": "4,4",
+                        "startOffsets": "752,874",
+                        "endColumns": "121,133",
+                        "endOffsets": "869,1003"
+                    }
+                },
                 {
                     "source": "/Users/annenatchimie/.gradle/caches/transforms-3/e21a48fc07e68aa916f2f9287a02e87d/transformed/appcompat-1.4.1/res/values-large-v4/values-large-v4.xml",
                     "from": {

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dareapp-mergeDebugResources-27:/values-nb/values-nb.xml",
+            "outputFile": "com.dareapp-mergeDebugResources-34:/values-nb/values-nb.xml",
             "map": [
                 {
                     "source": "/Users/annenatchimie/.gradle/caches/transforms-3/4c98ac1678e91268ed33f9d3ff7f04ab/transformed/jetified-play-services-basement-18.2.0/res/values-nb/values.xml",

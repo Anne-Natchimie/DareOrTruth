@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.dareapp-mergeDebugResources-27:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.dareapp-mergeDebugResources-34:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/annenatchimie/.gradle/caches/transforms-3/db87ff055a94702a7b1149594e6a0146/transformed/jetified-play-services-auth-20.6.0/res/values-watch-v20/values.xml",

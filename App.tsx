@@ -1,25 +1,62 @@
-import { Button, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react';
+import {
+  SafeAreaView,
+  View,
+  FlatList,
+  StyleSheet,
+  Text,
+  StatusBar,
+} from 'react-native';
+import { useSelector } from 'react-redux';
+import ItemCategory from './component/ItemCategory';
+import styles from './styles';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DareOrTruth from './screens/DareOrTruth';
+import firestore from '@react-native-firebase/firestore';
 
-import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './redux/counter' // action creator
-import Icon from 'react-native-vector-icons/FontAwesome';
+const Stack = createNativeStackNavigator();
+
+const HomeScreen = () => {
+
+    const categories = useSelector(state => state.category)
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={categories}
+        renderItem={({item}) => <ItemCategory id={item.id} name={item.name} />}
+        keyExtractor={item => item.id}
+      />
+    </SafeAreaView>
+  );
+};
 
 const App = () => {
 
-  const count = useSelector((state) => state.counter.value) // read the store
+  useEffect(() => {
+    firestore()
+      .collection('Users')
+      .add({
+        name: 'Ada Lovelace',
+        age: 30,
+      })
+      .then(() => {
+        console.log('User added!');
+      });
+  }, [])
 
-  const dispatch = useDispatch() // write in the store
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="DareOrTruth" component={DareOrTruth} />
+      </Stack.Navigator>
+    </NavigationContainer>
 
-    return (
-        <View>
-        <Text>nb {count}</Text>
-        <Button title='Increment' onPress={() => dispatch(increment())} />
-        <Icon name="music" color="#4F8EF7" />
-        </View>
-    )
+    // onPress={goToDareOrTruth}
+
+  );
 }
 
-export default App
-
-const styles = StyleSheet.create({})
+export default App;
